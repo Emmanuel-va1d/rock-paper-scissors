@@ -8,4 +8,10 @@ let getComputerChoice = () => {
         return "Scissors";
 };
 
-console.log(getComputerChoice());
+let playRound = (player, computer) => {
+    player = player.toLowerCase();
+    player = player.replace(player.charAt(0), player.charAt(0).toUpperCase());
+    return player;
+};
+player = "ROCK";
+console.log(playRound(player));
