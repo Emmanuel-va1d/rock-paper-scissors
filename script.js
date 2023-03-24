@@ -11,7 +11,15 @@ let getComputerChoice = () => {
 let playRound = (player, computer) => {
     player = player.toLowerCase();
     player = player.replace(player.charAt(0), player.charAt(0).toUpperCase());
-    return player;
+    // win condition
+    if ((player == "Rock" && computer == "Scissors") || 
+    (player == "Scissors" && computer == "Paper") ||
+    (player == "Paper" && computer == "Rock"))
+        return `You won! ${player} beats ${computer}`;
 };
-player = "ROCK";
-console.log(playRound(player));
+
+let playerChoice = "Rock";
+let computerChoice = getComputerChoice();
+
+console.log(computerChoice);
+console.log(playRound(playerChoice, computerChoice));
