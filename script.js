@@ -15,10 +15,14 @@ let playRound = (player, computer) => {
     if ((player == "Rock" && computer == "Scissors") || 
     (player == "Scissors" && computer == "Paper") ||
     (player == "Paper" && computer == "Rock"))
-        return `You won! ${player} beats ${computer}`;
+        return `You win! ${player} beats ${computer}`;
+    else if (player == computer)
+        return `Draw! You both chose ${player}`;
+    else
+        return `You lose! ${computer} beats ${player}`;
 };
 
-let playerChoice = "Rock";
+let playerChoice = "Scissors";
 let computerChoice = getComputerChoice();
 
 console.log(computerChoice);
