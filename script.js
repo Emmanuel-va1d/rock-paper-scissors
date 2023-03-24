@@ -14,10 +14,14 @@ let playRound = (player, computer) => {
     // win condition
     if ((player == "Rock" && computer == "Scissors") || 
     (player == "Scissors" && computer == "Paper") ||
-    (player == "Paper" && computer == "Rock"))
+    (player == "Paper" && computer == "Rock")) {
+        score += 2;
         return `You win! ${player} beats ${computer}`;
-    else if (player == computer)
+    }
+    else if (player == computer) {
+        score++;
         return `Draw! You both chose ${player}`;
+    }
     else 
         return `You lose! ${computer} beats ${player}`;
 };
@@ -28,7 +32,15 @@ let game = (player, computer) => {
         computer = getComputerChoice();
         console.log(playRound(player, computer));
     }
+    if (score > 5)
+        console.log("You're the winner!");
+    else if (score == 5)
+        console.log("It's a tie!");
+    else
+        console.log("The computer is the winner!");
 };
+
+var score = 0;
 
 let playerChoice;
 let computerChoice;
