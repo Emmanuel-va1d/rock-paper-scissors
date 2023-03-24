@@ -18,12 +18,19 @@ let playRound = (player, computer) => {
         return `You win! ${player} beats ${computer}`;
     else if (player == computer)
         return `Draw! You both chose ${player}`;
-    else
+    else 
         return `You lose! ${computer} beats ${player}`;
 };
 
-let playerChoice = "Scissors";
-let computerChoice = getComputerChoice();
+let game = (player, computer) => {
+    for (let i = 0; i < 5; i++) {
+        player = prompt("Choose Rock, Paper, or Scissors: ")
+        computer = getComputerChoice();
+        console.log(playRound(player, computer));
+    }
+};
 
-console.log(computerChoice);
-console.log(playRound(playerChoice, computerChoice));
+let playerChoice;
+let computerChoice;
+
+game(playerChoice, computerChoice);
