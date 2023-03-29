@@ -9,8 +9,6 @@ let getComputerChoice = () => {
 };
 
 let playRound = (player, computer) => {
-    player = player.toLowerCase();
-    player = player.replace(player.charAt(0), player.charAt(0).toUpperCase());
     // win condition
     if ((player == "Rock" && computer == "Scissors") || 
     (player == "Scissors" && computer == "Paper") ||
@@ -25,6 +23,10 @@ let playRound = (player, computer) => {
     else 
         return `You lose! ${computer} beats ${player}`;
 };
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
 /*let game = (player, computer) => {
     for (let i = 0; i < 5; i++) {
