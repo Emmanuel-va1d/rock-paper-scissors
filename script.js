@@ -26,7 +26,7 @@ let playRound = (player, computer) => {
         return `You lose! ${computer} beats ${player}`;
 };
 
-let game = (player, computer) => {
+/*let game = (player, computer) => {
     for (let i = 0; i < 5; i++) {
         player = prompt("Choose Rock, Paper, or Scissors: ")
         computer = getComputerChoice();
@@ -38,7 +38,7 @@ let game = (player, computer) => {
         console.log("It's a tie!");
     else
         console.log("The computer is the winner!");
-};
+};*/
 
 var score = 0;
 
