@@ -20,7 +20,7 @@ var playRound = (choice, computer) => {
 }
 
 
-var game = (choice) => {
+var game = choice => {
     let computerChoice = getComputerChoice();
 
     if (playerScore < 5 && computerScore < 5) {
@@ -39,6 +39,16 @@ var game = (choice) => {
     cScore.textContent = `${computerScore} - Comp`;
 }
 
+var reset_btn = () => {
+    console.clear();
+    playerScore = 0;
+    computerScore = 0;
+    pScore.textContent = `You - ${playerScore}`;
+    cScore.textContent = `${computerScore} - Comp`;
+    pChoice.textContent = "-  -  -";
+    cChoice.textContent = "-  -  -";
+}
+
 var playerScore = 0;
 var computerScore = 0;
 
@@ -51,5 +61,7 @@ window.onload = () => {
     rock.addEventListener("click", () => game("Rock"));
     paper.addEventListener("click", () => game("Paper"));
     scissors.addEventListener("click", () => game("Scissors"));
+
+    reset.addEventListener("click", reset_btn);
 
 };
