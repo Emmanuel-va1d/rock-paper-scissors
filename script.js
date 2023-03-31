@@ -12,14 +12,22 @@ let playRound = (player, computer) => {
     if (player == "Rock" && computer == "Scissors" || 
     player == "Paper" && computer == "Rock" || 
     player == "Scissors" && computer == "Paper")
-        score = 2;
+        pScore++;
     else if (player == computer)
-        score = 1;
+        cScore += 0;
     else
-        score = 0;
+        cScore++;
 };
 
-var score = 0;
+let game = (player, computer) => {
+    while (pScore !== 10 || cScore !==0) {
+        computer = getComputerChoice();
+        playRound(player, computer);
+    }
+}
+
+var pScore = 0;
+var cScore = 0;
 var playerChoice;
 var computerChoice;
 
@@ -32,5 +40,6 @@ window.addEventListener("click", () => {
     paper.addEventListener("click", () => playerChoice = "Paper");
     scissors.addEventListener("click", () => playerChoice = "Scissors");
     
+    game(playerChoice, computerChoice);
 
 });
