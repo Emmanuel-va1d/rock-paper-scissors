@@ -43,7 +43,7 @@ button {
 .play {
     display: flex;
     justify-content: space-evenly;
-    padding: 30px 150px 0 150px;
+    padding: 30px 125px 0 125px;
     height: 300px;
 }
 
