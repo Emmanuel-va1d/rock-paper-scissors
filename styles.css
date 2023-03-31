@@ -13,10 +13,6 @@ div {
     outline-style: inset;
 }
 
-.title {
-    text-align: center;
-}
-
 button {
     border-radius: 20px;
     width: 100px;
@@ -31,6 +27,26 @@ button {
     height: 450px;
 }
 
+.title {
+    text-align: center;
+    height: 50px;
+    padding-top: 10px;
+}
+
+.players {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60px;
+}
+
+.play {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 150px 0 150px;
+    height: 300px;
+}
+
 .ui {
     position: relative;
     width: auto;
@@ -39,4 +55,16 @@ button {
     align-items: center;
     justify-content: space-evenly;
     padding: 0 200px 0 200px;
+}
+
+.reset {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 107px;
+}
+
+.reset button {
+    background-color: black;
+    color: white;
 }
