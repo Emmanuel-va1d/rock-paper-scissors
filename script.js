@@ -1,4 +1,4 @@
-let getComputerChoice = () => {
+var getComputerChoice = () => {
     let choice = Math.floor(Math.random() * 3);
     if (choice == 0)
         return "Rock";
@@ -8,38 +8,12 @@ let getComputerChoice = () => {
         return "Scissors";
 };
 
-let playRound = (player, computer) => {
-    if (player == "Rock" && computer == "Scissors" || 
-    player == "Paper" && computer == "Rock" || 
-    player == "Scissors" && computer == "Paper")
-        pScore++;
-    else if (player == computer)
-        cScore += 0;
-    else
-        cScore++;
-};
-
-let game = (player, computer) => {
-    while (pScore !== 10 || cScore !==0) {
-        computer = getComputerChoice();
-        playRound(player, computer);
-    }
-}
-
-var pScore = 0;
-var cScore = 0;
-var playerChoice;
-var computerChoice;
-
-window.addEventListener("click", () => {
+window.onload = () => {
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
     const scissors = document.querySelector("#scissors");
 
-    rock.addEventListener("click", () => playerChoice = "Rock");
-    paper.addEventListener("click", () => playerChoice = "Paper");
-    scissors.addEventListener("click", () => playerChoice = "Scissors");
-    
-    game(playerChoice, computerChoice);
-
-});
+    rock.addEventListener("click", () => {console.log("Rock")});
+    paper.addEventListener("click", () => {console.log("Paper")});
+    scissors.addEventListener("click", () => {console.log("Scissors")});
+};
