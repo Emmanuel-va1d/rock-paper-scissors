@@ -37,9 +37,18 @@ var game = choice => {
 
     pScore.textContent = `You - ${playerScore}`;
     cScore.textContent = `${computerScore} - Comp`;
+
+    winner();
 }
 
-var reset_btn = () => {
+var winner = () => {
+    if (playerScore == 5)
+        win.textContent = "You win!";
+    else if (computerScore == 5)
+        win.textContent = "You lose";
+}
+
+var reset = () => {
     console.clear();
     playerScore = 0;
     computerScore = 0;
@@ -47,13 +56,14 @@ var reset_btn = () => {
     cScore.textContent = `${computerScore} - Comp`;
     pChoice.textContent = "-  -  -";
     cChoice.textContent = "-  -  -";
+    win.textContent = "";
 }
 
 var playerScore = 0;
 var computerScore = 0;
 
 window.onload = () => {
-    const reset = document.querySelector("#reset");
+    const reset_btn = document.querySelector("#reset");
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
     const scissors = document.querySelector("#scissors");
@@ -62,6 +72,6 @@ window.onload = () => {
     paper.addEventListener("click", () => game("Paper"));
     scissors.addEventListener("click", () => game("Scissors"));
 
-    reset.addEventListener("click", reset_btn);
+    reset_btn.addEventListener("click", reset);
 
 };
